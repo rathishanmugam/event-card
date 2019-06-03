@@ -30,7 +30,7 @@ module.exports = function (router) {
     router.post('/event', function (req, res) {
         let event = new Event(req.body)
         console.log(req.body)
-        Event.save(function (err, event) {
+        event.save(function (err, event) {
             if (err) return console.log(err)
             res.status(200).json(user)
         })
